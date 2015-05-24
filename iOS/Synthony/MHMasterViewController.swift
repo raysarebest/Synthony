@@ -20,6 +20,7 @@ class MHMasterViewController: UITableViewController{
         cell.titleLabel.text = song.title
         cell.artistLabel.text = song.artist
         cell.acceptabilityView.layer.cornerRadius = cell.acceptabilityView.frame.size.height / 2
+        cell.configureWithSong(song)
         if let art = song.artwork{
             cell.albumImageView.image = art.imageWithSize(cell.albumImageView.frame.size)
         }

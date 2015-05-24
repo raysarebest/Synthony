@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4C2B3C321B10FE3400AEF319 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C2B3C2F1B10FDB200AEF319 /* MediaPlayer.framework */; };
+		4C8928961B117D520040C7A0 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8928951B117D520040C7A0 /* FXBlurView.m */; };
+		4C8928991B117D940040C7A0 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C8928971B117D880040C7A0 /* Accelerate.framework */; };
 		4CBD609D1B111E6A00390118 /* MHAcceptableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBD609C1B111E6A00390118 /* MHAcceptableTableViewCell.swift */; };
 		4CBD60A01B112E7A00390118 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CBD609E1B112E7000390118 /* QuartzCore.framework */; };
 		4CC9B0F41B10F5D700A5374B /* MHAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC9B0F31B10F5D700A5374B /* MHAppDelegate.swift */; };
@@ -31,6 +33,10 @@
 
 /* Begin PBXFileReference section */
 		4C2B3C2F1B10FDB200AEF319 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		4C8928931B117D510040C7A0 /* Synthony-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Synthony-Bridging-Header.h"; sourceTree = "<group>"; };
+		4C8928941B117D520040C7A0 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		4C8928951B117D520040C7A0 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
+		4C8928971B117D880040C7A0 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		4CBD609C1B111E6A00390118 /* MHAcceptableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHAcceptableTableViewCell.swift; sourceTree = "<group>"; };
 		4CBD609E1B112E7000390118 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4CC9B0EE1B10F5D700A5374B /* Synthony.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Synthony.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C8928991B117D940040C7A0 /* Accelerate.framework in Frameworks */,
 				4CBD60A01B112E7A00390118 /* QuartzCore.framework in Frameworks */,
 				4C2B3C321B10FE3400AEF319 /* MediaPlayer.framework in Frameworks */,
 			);
@@ -69,10 +76,22 @@
 		4C2B3C311B10FDCC00AEF319 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C8928921B117CE20040C7A0 /* FXBlurView */,
+				4C8928971B117D880040C7A0 /* Accelerate.framework */,
 				4CBD609E1B112E7000390118 /* QuartzCore.framework */,
 				4C2B3C2F1B10FDB200AEF319 /* MediaPlayer.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C8928921B117CE20040C7A0 /* FXBlurView */ = {
+			isa = PBXGroup;
+			children = (
+				4C8928941B117D520040C7A0 /* FXBlurView.h */,
+				4C8928951B117D520040C7A0 /* FXBlurView.m */,
+				4C8928931B117D510040C7A0 /* Synthony-Bridging-Header.h */,
+			);
+			name = FXBlurView;
 			sourceTree = "<group>";
 		};
 		4CC9B0E51B10F5D700A5374B = {
@@ -237,6 +256,7 @@
 			files = (
 				4CC9B0F81B10F5D700A5374B /* MHDetailViewController.swift in Sources */,
 				4CC9B0F61B10F5D700A5374B /* MHMasterViewController.swift in Sources */,
+				4C8928961B117D520040C7A0 /* FXBlurView.m in Sources */,
 				4CBD609D1B111E6A00390118 /* MHAcceptableTableViewCell.swift in Sources */,
 				4CC9B0F41B10F5D700A5374B /* MHAppDelegate.swift in Sources */,
 			);
@@ -365,9 +385,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Synthony/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Synthony/Synthony-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -375,9 +398,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Synthony/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Synthony/Synthony-Bridging-Header.h";
 			};
 			name = Release;
 		};

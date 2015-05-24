@@ -118,6 +118,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iNI-JW-7C6">
                                 <rect key="frame" x="175" y="72" width="250" height="250"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="429-Cd-IqB"/>
                                     <constraint firstAttribute="width" secondItem="iNI-JW-7C6" secondAttribute="height" multiplier="1:1" id="G30-Pf-wxd"/>
@@ -156,26 +157,38 @@
                                     <action selector="togglePlaying" destination="Ah7-4n-0Wa" eventType="touchUpInside" id="Jhc-YN-sVN"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1HQ-nq-mtq" customClass="MPVolumeView">
+                                <rect key="frame" x="16" y="555" width="568" height="37"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="KV4-O2-3XQ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hei-ns-EKo" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leadingMargin" id="3Pg-he-9Lr"/>
                             <constraint firstItem="hei-ns-EKo" firstAttribute="trailing" secondItem="MMQ-IT-qOo" secondAttribute="trailingMargin" id="4BS-ok-Q4m"/>
+                            <constraint firstItem="1HQ-nq-mtq" firstAttribute="trailing" secondItem="MMQ-IT-qOo" secondAttribute="trailingMargin" id="A68-jy-jbd"/>
                             <constraint firstAttribute="centerX" secondItem="1OT-5T-Ezs" secondAttribute="centerX" constant="-0.5" id="BWV-XY-QMD"/>
                             <constraint firstItem="uZU-z3-uEg" firstAttribute="trailing" secondItem="MMQ-IT-qOo" secondAttribute="trailingMargin" id="JaA-8h-eOs"/>
                             <constraint firstItem="uZU-z3-uEg" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leadingMargin" id="Joq-gu-l17"/>
                             <constraint firstAttribute="centerX" secondItem="iNI-JW-7C6" secondAttribute="centerX" id="K7R-7P-BCe"/>
                             <constraint firstItem="hei-ns-EKo" firstAttribute="top" secondItem="iNI-JW-7C6" secondAttribute="bottom" constant="8" id="ewD-vb-KYt"/>
                             <constraint firstItem="uZU-z3-uEg" firstAttribute="top" secondItem="hei-ns-EKo" secondAttribute="bottom" constant="8" id="fJZ-8d-UHw"/>
+                            <constraint firstItem="1HQ-nq-mtq" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leadingMargin" id="kje-Yf-qH3"/>
                             <constraint firstItem="1OT-5T-Ezs" firstAttribute="top" secondItem="uZU-z3-uEg" secondAttribute="bottom" constant="8" id="oHK-eg-AUU"/>
                             <constraint firstItem="iNI-JW-7C6" firstAttribute="top" secondItem="cIm-e0-J51" secondAttribute="bottom" constant="8" id="qNj-et-avU"/>
+                            <constraint firstItem="a0L-h9-sNL" firstAttribute="top" secondItem="1HQ-nq-mtq" secondAttribute="bottom" constant="8" id="vkZ-Li-uIE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="cra-N8-TIN"/>
                     <connections>
                         <outlet property="albumArtImageView" destination="iNI-JW-7C6" id="IFL-qc-b58"/>
                         <outlet property="infoLabel" destination="uZU-z3-uEg" id="qWT-VJ-hVc"/>
+                        <outlet property="playPauseButton" destination="1OT-5T-Ezs" id="dBd-St-1CK"/>
                         <outlet property="titleLabel" destination="hei-ns-EKo" id="4mQ-RQ-Ga5"/>
+                        <outlet property="volumeView" destination="1HQ-nq-mtq" id="8nV-7x-t5z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
