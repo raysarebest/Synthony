@@ -36,8 +36,5 @@ class MHDetailViewController: UIViewController{
         }
         titleLabel.text = song!.title
         infoLabel.text = "\(song!.artist) - \(song!.albumTitle)"
-        let airPlayImage = volumeView.routeButtonImageForState(.Normal)
-        UIGraphicsBeginImageContext(airPlayImage.size)
-        let context = UIGraphicsGetCurrentContext()
     }
 }
